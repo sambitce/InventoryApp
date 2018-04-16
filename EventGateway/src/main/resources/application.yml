@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: Event-Gateway
+
+server:
+  port: 8005
+
+eureka:
+  client: 
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8004/eureka
+  server:
+      waitTimeInMsWhenSyncEmpty: 0

@@ -1,0 +1,30 @@
+spring:
+  applciation:
+    name: eureka-server
+    
+server:
+  port: 8004
+  
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:8004/eureka/
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+    
+zuul:
+  prefix: /api
+  routes:
+    db-service:
+      path: /db-service/**
+      url:  http://localhost:8002
+    item-service:
+      path: /item-service/**
+      url: http://localhost:8003
+    event-gateway:
+      path: /event-gateway/**
+      url: http://localhost:8005
+      
+       
