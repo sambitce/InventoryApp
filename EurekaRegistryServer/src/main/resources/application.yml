@@ -1,5 +1,5 @@
 spring:
-  applciation:
+  application:
     name: eureka-server
     
 server:
@@ -26,5 +26,12 @@ zuul:
     event-gateway:
       path: /event-gateway/**
       url: http://localhost:8005
+    message-processor: 
+      path: /message-processor/**
+      url: http://localhost:8006
+    mysql-service:
+      path: /mysql-service/**
+      url: http://localhost:8007
+      
       
        

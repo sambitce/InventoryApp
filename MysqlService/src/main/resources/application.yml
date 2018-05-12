@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: mysql-service
+  datasource:
+    url: jdbc:mysql://192.168.99.100:3306/test
+    username: sa
+    password: password
+    testWhileIdle: true
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+server:
+  port: 8007
+  
+eureka:
+  client: 
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:8004/eureka
+      
+
+    
